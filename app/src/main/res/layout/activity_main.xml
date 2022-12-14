@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/bgDarckFondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/publicidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/publicidad">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="15dp">
+
+                <RelativeLayout
+                    style="@style/cvBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_blanco">
+
+
+                    <TextView
+                        android:id="@+id/tv_dinero_actual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:text="Tu dinero"
+                        android:textColor="@color/bg_gris_oscuro"
+                        android:textSize="15sp" />
+
+                    <!--  <TextView
+                        android:id="@+id/tv_Porcentaje"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_dinero_actual"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/fondo_porcentaje"
+                        android:gravity="center"
+                        android:text="+40%"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" /> -->
+
+                    <RelativeLayout
+                        android:layout_width="110dp"
+                        android:layout_height="102dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="0dp">
+
+                        <ProgressBar
+                            android:id="@+id/circlePbar"
+                            style="@style/CircularDeterminateProgressBar"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="@string/app_name"
+                            android:max="34"
+                            android:onClick="onClick"
+                            android:progress="10">
+
+                        </ProgressBar>
+
+                        <TextView
+                            android:id="@+id/tv_faltan_dias"
+                            style="@style/myColor"
+                            android:layout_width="17dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="46dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="47dp"
+                            android:text="00"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            style="@style/myColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="49dp"
+                            android:layout_marginEnd="42dp"
+                            android:text="dias" />
+                    </RelativeLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_total_dinero"
+                        style="@style/myColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_dinero_actual"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/outfitmedium"
+                        android:text="$0.00"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+
+                    <!--   <TextView
+                          android:id="@+id/tv_dolar"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_below="@+id/tv_total_dinero"
+                          android:layout_marginStart="20dp"
+                          android:layout_marginTop="0dp"
+                          android:fontFamily="@font/notosansregular"
+                          android:text="USD 0.00"
+                          android:textColor="@color/white"
+                          android:textSize="14sp" /> -->
+
+                    <TextView
+                        android:id="@+id/tv_limite_por_dia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:text="Limite por dia"
+                        android:textColor="@color/bg_gris_oscuro"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_limite_dia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/outfitmedium"
+                        android:gravity="center"
+                        android:text="$0.00"
+                        android:textColor="#1A911F"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="37dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/tvProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="135dp"
+                        android:layout_marginEnd="38dp"
+                        android:text="TextView" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvContadorFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tarjeta"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="53dp"
+                android:text="@string/_0_00">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tempo"
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tarjeta"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="71dp"
+                android:layout_marginTop="4dp"
+                android:text="faltan horas">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/recordatorios"
+                style="@style/myColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tarjeta"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                tools:text="Recordatorios"
+                android:tint="?attr/colorControlNormal">
+
+            </TextView>
+
+            <HorizontalScrollView
+                android:id="@+id/otros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recordatorios"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        style="@style/chAction">
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gastos Fijos"
+                            app:iconStartPadding="10dp"
+                            android:layout_marginStart="16dp"
+                            app:chipIcon="@drawable/ic_home">
+
+                        </com.google.android.material.chip.Chip>
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:iconStartPadding="10dp"
+                            android:text="Calculadora de inversion"
+                            app:chipIcon="@drawable/ic_hotel">
+
+                        </com.google.android.material.chip.Chip>
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:iconStartPadding="10dp"
+                            android:text="Task"
+                            app:chipIcon="@drawable/ic_carrito">
+
+                        </com.google.android.material.chip.Chip>
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:iconStartPadding="10dp"
+                            android:text="Lorem Ipsum"
+                            android:layout_marginEnd="16dp">
+
+                        </com.google.android.material.chip.Chip>
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:id="@+id/movimientos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/otros"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Movimientos"
+                    android:textStyle="bold"
+                    android:tint="?attr/colorControlNormal" />
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/borde"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_share"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/btnAddSuperHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="177dp"
+                    android:background="@drawable/borde"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_add"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
+
+                </ImageView>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Divider"
+                android:layout_below="@+id/movimientos" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="buscar por nombre"
+                    android:maxLines="1"
+                    android:minHeight="48dp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerSuperHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:focusable="true"
+        android:onClick="onClick"
+        android:src="@drawable/ic_add"
+        app:layout_anchor="@id/bottomappBar" />
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomappBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="50dp"
+        app:hideOnScroll="true">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/botommNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

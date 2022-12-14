@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ControlCash</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="primera_vez_que_ingresas">¿Primera vez que ingresas?</string>
+    <string name="olvidaste_tu_clave">¿Olvidaste tu clave?</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="_0_00">$0.00</string>
+</resources>
